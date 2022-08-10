@@ -1,0 +1,20 @@
+html {
+  font-family: "Open Sans", sans-serif;
+}
+
+.title {
+  color: black;
+  font-size: 7vw;
+}
+
+.paragraph {
+  color: black;
+  font-size: 2vw;
+}
+
+.background {
+  background-color: aqua;
+  color: white;
+  height: 1920px;
+  width: 1080px;
+}

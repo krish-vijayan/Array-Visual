@@ -18,10 +18,16 @@ import {
 const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
 const FadeUp = batch(Fade(), Sticky(), Move());
 
-const haveFun = {
+const HaveFun = {
   fontSize: "20vw",
   textAlign: "center",
 };
+const Instructions = {
+  fontSize: "2vw",
+  width: "50vw",
+  textAlign: "center",
+};
+
 function App() {
   return (
     <>
@@ -34,13 +40,22 @@ function App() {
 
         <ScrollPage page={1}>
           <Animator animation={ZoomInScrollOut}>
-            <h1 style={haveFun}>HAVE FUN!</h1>
+            <h1 style={HaveFun}>HAVE FUN!</h1>
           </Animator>
         </ScrollPage>
 
         <ScrollPage page={2}>
           <Animator animation={FadeUp}>
-            <h1>This is where the interative array would go.</h1>
+            <p style={Instructions}>
+              In the following textbox, type exactly "const array = [1]". This
+              will declare an array of size 1
+            </p>
+          </Animator>
+        </ScrollPage>
+
+        <ScrollPage page={3}>
+          <Animator animation={FadeUp}>
+            <h1>This is where the interactive array will go.</h1>
           </Animator>
         </ScrollPage>
       </ScrollContainer>

@@ -1,5 +1,6 @@
 import "./App.css";
 import Description from "./components/Description";
+import Textbox from "./components/Array";
 import {
   ScrollContainer,
   ScrollPage,
@@ -47,15 +48,15 @@ function App() {
         <ScrollPage page={2}>
           <Animator animation={FadeUp}>
             <p style={Instructions}>
-              In the following textbox, type exactly "const array = [1]". This
-              will declare an array of size 1
+              In the following textbox, type exactly "const array = [1];". This
+              will declare an array of size 1.
             </p>
           </Animator>
         </ScrollPage>
 
         <ScrollPage page={3}>
-          <Animator animation={FadeUp}>
-            <h1>This is where the interactive array will go.</h1>
+          <Animator>
+            <Textbox />
           </Animator>
         </ScrollPage>
       </ScrollContainer>

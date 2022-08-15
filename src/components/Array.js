@@ -1,17 +1,15 @@
-import react from "react";
-import "./Array.css";
-import { useState } from "react";
+import react from 'react';
+import './Array.css';
+import { useState } from 'react';
+
 function Textbox() {
   const [input, setInput] = useState();
   const [error, setError] = useState();
-  const [compDesc, setCompDesc] = useState("");
   const [isHovering, setIsHovering] = useState(false);
   const [isHoveringText, setIsHoveringText] = useState(false);
-  const [arrLab, setArrLab ] = useState();
-  const [row, setRow] = useState();
-  const [column, setColumn] = useState();
-  const [index1, setIndex1] = useState();
-  const [index2, setIndex2] = useState();
+  const [arrLab, setArrLab] = useState();
+  const [column, setColumn] = useState('hide-text');
+  const [array, setArray] = useState('hide-text');
 
   const handleMouseOver = () => {
     setIsHovering(true);
@@ -33,30 +31,22 @@ function Textbox() {
   const handleInput = () => {
     console.log(input);
 
-    if (input == "const array = [1];") {
-      console.log("YESSSS");
+    if (input == 'const array = [1];') {
+      console.log('YESSSS');
       setError(null);
       setArrLab('/images/array-lables.png');
-      setRow('0')
-      setColumn('0')
-      setIndex1('index-1');
-      setIndex2(null);
-    } 
-    else if (input == 'const array = [2];'){
-      setError(null);
-      setArrLab('/images/array-lables.png');
-      setRow('0')
-      setColumn('0')
-      setIndex1('index-1');
-      setIndex2('index-2');
-    }
-
-      else {
-      console.log("NOOOO");
+      setColumn('column');
+      setArray('index');
+    } else {
+      console.log('NOOOO');
       setError('Please Enter enter "const array = [1];"');
       setArrLab(null);
+      setColumn('hide-text');
+      setArray('hide-text');
     }
   };
+
+  const arr = [7, 1, 5, 6, 7, 8]; //need to find a way to take the input between the brackets (parse)
 
   return (
     <>
@@ -73,11 +63,10 @@ function Textbox() {
             <p className="textbox-description">
               *This textbox is acting as a source-code editor. A source-code
               editor is a program that captures and integrates the software code
-              for an application{" "}
+              for an application.{' '}
             </p>
           )}
         </div>
-
 
         <button
           onMouseOver={handleMouseOver}
@@ -88,31 +77,40 @@ function Textbox() {
           Compile
           {isHovering && (
             <p className="compile-description">
-              {" "}
+              {' '}
               *This button is acting as a compiler. A Compiler essentially
               converts the Source Code (the human readable language, in this
               case JavaScript) into Machine Code (the computer readable
-              language). This is how humans and computers generally communicate!
+              language).
             </p>
           )}
         </button>
 
-
         <h1 className="error">{error}</h1>
 
-
-       
-        <h1 className='arr-column'>{column}</h1>
-        <h1 className='arr-row'>{row}</h1>
-        <div className={index1}></div>
-        <div className={index2}></div>
-        <img className='arr-lab' src={arrLab} />
-
-      
-
-
-        
+        {/* <h1 className="arr-column">{column}</h1>
+        <h1 className="arr-row">{row}</h1> */}
+        <div className={array}>
+          {arr.map((currElement, index) => {
+            return (
+              <>
+                <div>{currElement}</div>
+              </>
+            );
+          })}
+          {console.log(inputText)}
+        </div>
+        <div className={column}>
+          {arr.map((currElement, index) => {
+            return (
+              <>
+                <div>{index}</div>
+              </>
+            );
+          })}
+        </div>
       </div>
+      <img className="arr-lab" src={arrLab} />
     </>
   );
 }

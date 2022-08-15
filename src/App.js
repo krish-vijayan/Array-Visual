@@ -1,6 +1,6 @@
-import "./App.css";
-import Description from "./components/Description";
-import Textbox from "./components/Array";
+import './App.css';
+import Description from './components/Description';
+import Textbox from './components/Array';
 import {
   ScrollContainer,
   ScrollPage,
@@ -14,19 +14,19 @@ import {
   ZoomIn,
   ZoomOut,
   Move,
-} from "react-scroll-motion";
+} from 'react-scroll-motion';
 
 const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
 const FadeUp = batch(Fade(), Sticky(), Move());
 
 const HaveFun = {
-  fontSize: "20vw",
-  textAlign: "center",
+  fontSize: '20vw',
+  textAlign: 'center',
 };
 const Instructions = {
-  fontSize: "2vw",
-  width: "50vw",
-  textAlign: "center",
+  fontSize: '2vw',
+  width: '50vw',
+  textAlign: 'center',
 };
 
 function App() {

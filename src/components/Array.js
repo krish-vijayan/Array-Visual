@@ -2,14 +2,18 @@ import react from 'react';
 import './Array.css';
 import { useState } from 'react';
 
+var arr = [];
+
 function Textbox() {
   const [input, setInput] = useState();
   const [error, setError] = useState();
   const [isHovering, setIsHovering] = useState(false);
   const [isHoveringText, setIsHoveringText] = useState(false);
-  const [arrLab, setArrLab] = useState();
+  const [arrLab1, setArrLab1] = useState();
+  const [arrLab2, setArrLab2] = useState();
   const [column, setColumn] = useState('hide-text');
   const [array, setArray] = useState('hide-text');
+  const [inputArr, setInputArr] = useState('');
 
   const handleMouseOver = () => {
     setIsHovering(true);
@@ -29,24 +33,41 @@ function Textbox() {
   };
 
   const handleInput = () => {
-    console.log(input);
-
-    if (input == 'const array = [1];') {
+    if (
+      input.includes('const') == true &&
+      input.includes('=') == true &&
+      input.includes('[') == true &&
+      input.includes(']') == true &&
+      input.includes(';') == true
+    ) {
       console.log('YESSSS');
       setError(null);
-      setArrLab('/images/array-lables.png');
+      setArrLab1('/images/array-label-1.png');
+      setArrLab2('/images/array-label-2.png');
       setColumn('column');
       setArray('index');
+      setInputArr(input);
+      arr = [];
+      for (var i = 15; i < input.length - 2; i++) {
+        if (input[i] !== ',') {
+          arr.push(input[i]);
+        }
+      }
+      console.log(arr);
+      console.log(inputArr);
     } else {
       console.log('NOOOO');
-      setError('Please Enter enter "const array = [1];"');
-      setArrLab(null);
+      setError(
+        'Please use this JavaScript syntax of declaring an array "const array = [ ];"'
+      );
+      setArrLab1(null);
+      setArrLab2(null);
       setColumn('hide-text');
       setArray('hide-text');
     }
   };
 
-  const arr = [7, 1, 5, 6, 7, 8]; //need to find a way to take the input between the brackets (parse)
+  //need to find a way to take the input between the brackets (parse)
 
   return (
     <>
@@ -98,7 +119,6 @@ function Textbox() {
               </>
             );
           })}
-          {console.log(inputText)}
         </div>
         <div className={column}>
           {arr.map((currElement, index) => {
@@ -109,8 +129,11 @@ function Textbox() {
             );
           })}
         </div>
+        <div className="lab-wrapper">
+          <img className="arr-lab-1" src={arrLab1} />
+          <img className="arr-lab-2" src={arrLab2} />
+        </div>
       </div>
-      <img className="arr-lab" src={arrLab} />
     </>
   );
 }

@@ -34,23 +34,32 @@
 .error {
   font-family: 'Open Sans', sans-serif;
   position: absolute;
-  margin-top: 25%;
-  margin-left: 25%;
-  width: auto;
+  margin-top: 20%;
+  margin-left: 30%;
+  width: 40vw;
   font-size: 3vw;
+  text-align: center;
 }
 
 /******Array Stuff******************************/
-
-.arr-lab {
+.lab-wrapper div {
+  position: fixed;
+}
+.arr-lab-1 {
   position: absolute;
-  margin-top: 5%;
-  margin-left: 25%;
-  width: 50vw;
+  top: 25%;
+  right: 70%;
+  width: 30vw;
+}
+.arr-lab-2 {
+  position: absolute;
+  top: 40%;
+  right: 70%;
+  width: 30vw;
 }
 
 .index {
-  font-size: 1vw;
+  font-size: 40px;
   position: absolute;
   top: 40%;
   left: 17.5vw;
@@ -67,9 +76,9 @@
 }
 
 .column {
-  font-size: 2vw;
+  font-size: 40px;
   position: absolute;
-  top: 30%;
+  top: 29%;
   left: 21%;
 }
 .column div {

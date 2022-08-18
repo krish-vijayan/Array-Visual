@@ -59,7 +59,7 @@
 }
 
 .index {
-  font-size: 40px;
+  font-size: 4vw;
   position: absolute;
   top: 40%;
   left: 17.5vw;
@@ -76,7 +76,7 @@
 }
 
 .column {
-  font-size: 40px;
+  font-size: 3vw;
   position: absolute;
   top: 29%;
   left: 21%;

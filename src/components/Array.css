@@ -95,7 +95,9 @@
   width: 10vw;
   height: 10vw;
   margin: 70px 10px 10px 10px;
-  background: red;
+  background: white;
+  border-color: black;
+  border-style: solid;
   border-radius: 10px;
 }
 

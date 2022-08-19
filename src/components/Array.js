@@ -142,6 +142,8 @@ function Textbox() {
         </p>
 
         <div className={array}>
+          {' '}
+          {/**for multiple index boxes */}
           {arr.map((currElement, index) => {
             return (
               <>

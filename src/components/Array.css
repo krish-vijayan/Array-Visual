@@ -13,6 +13,18 @@
   font-size: 1vw;
   opacity: 30%;
 }
+.arr-size {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2vw;
+}
+.arr-size-description {
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  margin-top: 13%;
+  width: 100%;
+  font-size: 1vw;
+  opacity: 30%;
+}
 
 .compile {
   font-family: 'Open Sans', sans-serif;
@@ -42,6 +54,7 @@
 }
 
 /******Array Stuff******************************/
+
 .lab-wrapper div {
   position: fixed;
 }

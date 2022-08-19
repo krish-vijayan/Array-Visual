@@ -9,11 +9,12 @@ function Textbox() {
   const [error, setError] = useState();
   const [isHovering, setIsHovering] = useState(false);
   const [isHoveringText, setIsHoveringText] = useState(false);
+  const [isHoveringText2, setIsHoveringText2] = useState(false);
   const [arrLab1, setArrLab1] = useState();
   const [arrLab2, setArrLab2] = useState();
   const [column, setColumn] = useState('hide-text');
   const [array, setArray] = useState('hide-text');
-  const [inputArr, setInputArr] = useState('');
+  const [liveSize, setLiveSize] = useState(0);
 
   const handleMouseOver = () => {
     setIsHovering(true);
@@ -27,10 +28,18 @@ function Textbox() {
   const handleMouseOut2 = () => {
     setIsHoveringText(false);
   };
+  const handleMouseOver3 = () => {
+    setIsHoveringText2(true);
+  };
+  const handleMouseOut3 = () => {
+    setIsHoveringText2(false);
+  };
 
   const inputText = (val) => {
     setInput(val.target.value);
   };
+
+  var size = 0;
 
   const handleInput = () => {
     if (
@@ -40,25 +49,28 @@ function Textbox() {
       input.includes(']') == true &&
       input.includes(';') == true
     ) {
-      console.log('YESSSS');
+      size = 0; //resets array size everytime compile is clicked
+      arr = []; //resets array everytime compile is clicked
       setError(null);
       setArrLab1('/images/array-label-1.png');
       setArrLab2('/images/array-label-2.png');
       setColumn('column');
       setArray('index');
-      setInputArr(input);
-      arr = [];
+
       for (var i = 15; i < input.length - 2; i++) {
         if (input[i] !== ',') {
           arr.push(input[i]);
+          size = size + 1;
         }
       }
+      setLiveSize(size);
       console.log(arr);
-      console.log(inputArr);
+      console.log(input);
     } else {
+      setLiveSize(0);
       console.log('NOOOO');
       setError(
-        'Please use this JavaScript syntax of declaring an array "const array = [ ];"'
+        'Please use the JavaScript syntax of declaring an array "const array = [ ];"'
       );
       setArrLab1(null);
       setArrLab2(null);
@@ -88,11 +100,13 @@ function Textbox() {
             </p>
           )}
         </div>
-
         <button
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
-          onClick={handleInput}
+          onClick={() => {
+            handleInput();
+            console.log(size);
+          }}
           className="compile"
         >
           Compile
@@ -106,11 +120,21 @@ function Textbox() {
             </p>
           )}
         </button>
-
         <h1 className="error">{error}</h1>
 
-        {/* <h1 className="arr-column">{column}</h1>
-        <h1 className="arr-row">{row}</h1> */}
+        <h1
+          onMouseOver={handleMouseOver3}
+          onMouseOut={handleMouseOut3}
+          className="arr-size"
+        >
+          Array Size = {liveSize}
+          {isHoveringText2 && (
+            <p className="arr-size-description">
+              *Array size represents the number of elements in the array.
+            </p>
+          )}
+        </h1>
+
         <div className={array}>
           {arr.map((currElement, index) => {
             return (

@@ -52,8 +52,8 @@ function Textbox() {
       size = 0; //resets array size everytime compile is clicked
       arr = []; //resets array everytime compile is clicked
       setError(null);
-      setArrLab1('/images/array-label-1.png');
-      setArrLab2('/images/array-label-2.png');
+      setArrLab1('Index Number ⮞');
+      setArrLab2('Element ⮞');
       setColumn('column');
       setArray('index');
 
@@ -70,7 +70,7 @@ function Textbox() {
       setLiveSize(0);
       console.log('NOOOO');
       setError(
-        'Please use the JavaScript syntax of declaring an array "const array = [ ];"'
+        'Please use the JavaScript syntax of declaring an array "const array = [ ];" '
       );
       setArrLab1(null);
       setArrLab2(null);
@@ -135,6 +135,12 @@ function Textbox() {
           )}
         </h1>
 
+        <p className="note">
+          *Please make sure that each element within the square brackets is a
+          single character (seperated with a comma if there are multiple)
+          Example: [1,2,3,5];
+        </p>
+
         <div className={array}>
           {arr.map((currElement, index) => {
             return (
@@ -154,8 +160,8 @@ function Textbox() {
           })}
         </div>
         <div className="lab-wrapper">
-          <img className="arr-lab-1" src={arrLab1} />
-          <img className="arr-lab-2" src={arrLab2} />
+          <h1 className="arr-lab-1">{arrLab1}</h1>
+          <h1 className="arr-lab-2">{arrLab2}</h1>
         </div>
       </div>
     </>

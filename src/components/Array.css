@@ -53,6 +53,14 @@
   text-align: center;
 }
 
+.note {
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  margin-top: 7%;
+  width: 100%;
+  font-size: 0.7vw;
+}
+
 /******Array Stuff******************************/
 
 .lab-wrapper div {
@@ -60,15 +68,17 @@
 }
 .arr-lab-1 {
   position: absolute;
-  top: 25%;
-  right: 70%;
+  top: 36%;
+  right: 69%;
   width: 30vw;
+  font-size: 2vw;
 }
 .arr-lab-2 {
   position: absolute;
-  top: 40%;
-  right: 70%;
+  top: 52%;
+  right: 63%;
   width: 30vw;
+  font-size: 2vw;
 }
 
 .index {
@@ -86,19 +96,29 @@
   height: 10vw;
   margin: 70px 10px 10px 10px;
   background: red;
+  border-radius: 10px;
 }
 
 .column {
   font-size: 3vw;
   position: absolute;
   top: 29%;
-  left: 21%;
+  left: 21.3%;
 }
 .column div {
   display: inline-block;
   width: 10vw;
   height: 10vw;
   margin: 85px 10px 10px 10px;
+}
+
+@media (max-width: 710px) {
+  .column {
+    font-size: 3vw;
+    position: absolute;
+    top: 29%;
+    left: 19.3%;
+  }
 }
 
 .hide-text {

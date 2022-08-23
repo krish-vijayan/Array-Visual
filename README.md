@@ -8,8 +8,8 @@ Currently, this website handles 1D arrays with single character elements. If you
 
 References
 
-• https://www.bbc.co.uk/bitesize/guides/zfnny4j/revision/7#:~:text=An%20array%20is%20a%20data,of%20the%20same%20data%20type%20.
+https://www.bbc.co.uk/bitesize/guides/zfnny4j/revision/7#:~:text=An%20array%20is%20a%20data,of%20the%20same%20data%20type%20.
 
-• https://www.easytechjunkie.com/what-is-a-source-code-editor.htm
+https://www.easytechjunkie.com/what-is-a-source-code-editor.htm
 
-• https://www.cs.utah.edu/~germain/PPS/Topics/C_Language/compiling_C_programs.html#:~:text=Compiling%20is%20the%20transformation%20from,machine%20code%20(computer%20executable).
+https://www.cs.utah.edu/~germain/PPS/Topics/C_Language/compiling_C_programs.html#:~:text=Compiling%20is%20the%20transformation%20from,machine%20code%20(computer%20executable).
